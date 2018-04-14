@@ -1,0 +1,61 @@
+1 - 2 + 3
+1 2 3
+42 + "Red"
+1 - (2 + 3)
+"Hello" + " " + "SeaWolf."
+[1+2*7, 2+5/8, [2*3,5*6][1]][2] + 40
+"abcd"[1+1]
+1/0
+[3+5*6, 9*9/5-3,[[2,5],[3,7,[4,6]]]]
+'h,aha' + 'he  he' +''+ 'hoho'
+5+7*9/2
+42+'Red'
+"a" in "abc"
+"ab" in "abc"
+1 in [1,2,3]
+'s' in "string" or 1 in []
+1 in [1,2] and 2 in [4,3]
+2+3 < 5*6
+3+4 <= [1,2][1]
+"string" == "string"
+"haha" <> 'haha'
+"ab" > "cd"
+"ab" >= 'a'
+not 's' in "string"
+16//5
+16%5
+2**3**4
+2**(3**4)
+    " 1 + 2 = " + ' 3 '
+["abc",["bcd",["cde","def"]]][1][1][1][1]
+1 +       2.5
+'substring' in "There is a substring in this string"
+True or False and False
+(True or False) and False
+1 in [1,2] or 1 in [2,3] and 's' in 'g'
+5>2==2
+[1,2] [1,2] [1,2]
+1 2 3
+damnit
+1+0.2*5-1
+["abc",["bcd",["cde","def"]]][1+5/5-1]
+(not not True) or False and True and (not True)
+1+2 > 3 and 4 < 6
+"Hello" * 4
+"Hello" - 4
+1 in [1,2] and True
+''''
+1 and 2
+1 or 0
+not 0
+    " 1 + 2 = " + ' 3 '
+["abc",["bcd",["cde","def"]]][1][1][1][1]
+1 +       2.5
+'substring' in "There is a substring in this string"
+True or False and False
+(True or False) and False
+1  <> 2 and 'T' + (((["abc", ["def", "ghi"]][1][1][1]))) + "is" in "This string contains h"
+True and not False or not True and False
+1 // 2  + 5 > 5
+4 ** 3 ** 2 <> (4 ** 3)**2
+[1,2,3]*2

@@ -1,0 +1,2479 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> block
+Rule 1     block -> print_smt
+Rule 2     print_smt -> expression
+Rule 3     expression -> expression PLUS expression
+Rule 4     expression -> expression MINUS expression
+Rule 5     expression -> expression TIMES expression
+Rule 6     expression -> expression DIVIDE expression
+Rule 7     expression -> expression FLOORDIVIDE expression
+Rule 8     expression -> expression MODULUS expression
+Rule 9     expression -> expression POWER expression
+Rule 10    expression -> LPAREN expression RPAREN
+Rule 11    expression -> LBRACKET list RBRACKET
+Rule 12    expression -> LBRACKET RBRACKET
+Rule 13    expression -> expression LBRACKET expression RBRACKET
+Rule 14    expression -> expression OR expression
+Rule 15    expression -> expression AND expression
+Rule 16    expression -> expression LESSTHAN expression
+Rule 17    expression -> expression LESSEQUALTHAN expression
+Rule 18    expression -> expression EQUAL expression
+Rule 19    expression -> expression NOTEQUAL expression
+Rule 20    expression -> expression GREATERTHAN expression
+Rule 21    expression -> expression GREATEREQUALTHAN expression
+Rule 22    expression -> expression IN expression
+Rule 23    expression -> NOT expression
+Rule 24    list -> expression COMMA list
+Rule 25    list -> expression
+Rule 26    expression -> factor
+Rule 27    factor -> NUMBER
+Rule 28    factor -> STRING
+Rule 29    factor -> TRUE
+Rule 30    factor -> FALSE
+
+Terminals, with rules where they appear
+
+AND                  : 15
+COMMA                : 24
+DIVIDE               : 6
+EQUAL                : 18
+FALSE                : 30
+FLOORDIVIDE          : 7
+GREATEREQUALTHAN     : 21
+GREATERTHAN          : 20
+IN                   : 22
+LBRACKET             : 11 12 13
+LESSEQUALTHAN        : 17
+LESSTHAN             : 16
+LPAREN               : 10
+MINUS                : 4
+MODULUS              : 8
+NOT                  : 23
+NOTEQUAL             : 19
+NUMBER               : 27
+OR                   : 14
+PLUS                 : 3
+POWER                : 9
+RBRACKET             : 11 12 13
+RPAREN               : 10
+STRING               : 28
+TIMES                : 5
+TRUE                 : 29
+error                : 
+
+Nonterminals, with rules where they appear
+
+block                : 0
+expression           : 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 13 13 14 14 15 15 16 16 17 17 18 18 19 19 20 20 21 21 22 22 23 24 25
+factor               : 26
+list                 : 11 24
+print_smt            : 1
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . block
+    (1) block -> . print_smt
+    (2) print_smt -> . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    block                          shift and go to state 1
+    print_smt                      shift and go to state 2
+    expression                     shift and go to state 3
+    factor                         shift and go to state 7
+
+state 1
+
+    (0) S' -> block .
+
+
+
+state 2
+
+    (1) block -> print_smt .
+
+    $end            reduce using rule 1 (block -> print_smt .)
+
+
+state 3
+
+    (2) print_smt -> expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    $end            reduce using rule 2 (print_smt -> expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    FLOORDIVIDE     shift and go to state 16
+    MODULUS         shift and go to state 17
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+    OR              shift and go to state 20
+    AND             shift and go to state 21
+    LESSTHAN        shift and go to state 22
+    LESSEQUALTHAN   shift and go to state 23
+    EQUAL           shift and go to state 24
+    NOTEQUAL        shift and go to state 25
+    GREATERTHAN     shift and go to state 26
+    GREATEREQUALTHAN shift and go to state 27
+    IN              shift and go to state 28
+
+
+state 4
+
+    (10) expression -> LPAREN . expression RPAREN
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 29
+    factor                         shift and go to state 7
+
+state 5
+
+    (11) expression -> LBRACKET . list RBRACKET
+    (12) expression -> LBRACKET . RBRACKET
+    (24) list -> . expression COMMA list
+    (25) list -> . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    RBRACKET        shift and go to state 31
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    list                           shift and go to state 30
+    expression                     shift and go to state 32
+    factor                         shift and go to state 7
+
+state 6
+
+    (23) expression -> NOT . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 33
+    factor                         shift and go to state 7
+
+state 7
+
+    (26) expression -> factor .
+
+    PLUS            reduce using rule 26 (expression -> factor .)
+    MINUS           reduce using rule 26 (expression -> factor .)
+    TIMES           reduce using rule 26 (expression -> factor .)
+    DIVIDE          reduce using rule 26 (expression -> factor .)
+    FLOORDIVIDE     reduce using rule 26 (expression -> factor .)
+    MODULUS         reduce using rule 26 (expression -> factor .)
+    POWER           reduce using rule 26 (expression -> factor .)
+    LBRACKET        reduce using rule 26 (expression -> factor .)
+    OR              reduce using rule 26 (expression -> factor .)
+    AND             reduce using rule 26 (expression -> factor .)
+    LESSTHAN        reduce using rule 26 (expression -> factor .)
+    LESSEQUALTHAN   reduce using rule 26 (expression -> factor .)
+    EQUAL           reduce using rule 26 (expression -> factor .)
+    NOTEQUAL        reduce using rule 26 (expression -> factor .)
+    GREATERTHAN     reduce using rule 26 (expression -> factor .)
+    GREATEREQUALTHAN reduce using rule 26 (expression -> factor .)
+    IN              reduce using rule 26 (expression -> factor .)
+    $end            reduce using rule 26 (expression -> factor .)
+    RPAREN          reduce using rule 26 (expression -> factor .)
+    COMMA           reduce using rule 26 (expression -> factor .)
+    RBRACKET        reduce using rule 26 (expression -> factor .)
+
+
+state 8
+
+    (27) factor -> NUMBER .
+
+    PLUS            reduce using rule 27 (factor -> NUMBER .)
+    MINUS           reduce using rule 27 (factor -> NUMBER .)
+    TIMES           reduce using rule 27 (factor -> NUMBER .)
+    DIVIDE          reduce using rule 27 (factor -> NUMBER .)
+    FLOORDIVIDE     reduce using rule 27 (factor -> NUMBER .)
+    MODULUS         reduce using rule 27 (factor -> NUMBER .)
+    POWER           reduce using rule 27 (factor -> NUMBER .)
+    LBRACKET        reduce using rule 27 (factor -> NUMBER .)
+    OR              reduce using rule 27 (factor -> NUMBER .)
+    AND             reduce using rule 27 (factor -> NUMBER .)
+    LESSTHAN        reduce using rule 27 (factor -> NUMBER .)
+    LESSEQUALTHAN   reduce using rule 27 (factor -> NUMBER .)
+    EQUAL           reduce using rule 27 (factor -> NUMBER .)
+    NOTEQUAL        reduce using rule 27 (factor -> NUMBER .)
+    GREATERTHAN     reduce using rule 27 (factor -> NUMBER .)
+    GREATEREQUALTHAN reduce using rule 27 (factor -> NUMBER .)
+    IN              reduce using rule 27 (factor -> NUMBER .)
+    $end            reduce using rule 27 (factor -> NUMBER .)
+    RPAREN          reduce using rule 27 (factor -> NUMBER .)
+    COMMA           reduce using rule 27 (factor -> NUMBER .)
+    RBRACKET        reduce using rule 27 (factor -> NUMBER .)
+
+
+state 9
+
+    (28) factor -> STRING .
+
+    PLUS            reduce using rule 28 (factor -> STRING .)
+    MINUS           reduce using rule 28 (factor -> STRING .)
+    TIMES           reduce using rule 28 (factor -> STRING .)
+    DIVIDE          reduce using rule 28 (factor -> STRING .)
+    FLOORDIVIDE     reduce using rule 28 (factor -> STRING .)
+    MODULUS         reduce using rule 28 (factor -> STRING .)
+    POWER           reduce using rule 28 (factor -> STRING .)
+    LBRACKET        reduce using rule 28 (factor -> STRING .)
+    OR              reduce using rule 28 (factor -> STRING .)
+    AND             reduce using rule 28 (factor -> STRING .)
+    LESSTHAN        reduce using rule 28 (factor -> STRING .)
+    LESSEQUALTHAN   reduce using rule 28 (factor -> STRING .)
+    EQUAL           reduce using rule 28 (factor -> STRING .)
+    NOTEQUAL        reduce using rule 28 (factor -> STRING .)
+    GREATERTHAN     reduce using rule 28 (factor -> STRING .)
+    GREATEREQUALTHAN reduce using rule 28 (factor -> STRING .)
+    IN              reduce using rule 28 (factor -> STRING .)
+    $end            reduce using rule 28 (factor -> STRING .)
+    RPAREN          reduce using rule 28 (factor -> STRING .)
+    COMMA           reduce using rule 28 (factor -> STRING .)
+    RBRACKET        reduce using rule 28 (factor -> STRING .)
+
+
+state 10
+
+    (29) factor -> TRUE .
+
+    PLUS            reduce using rule 29 (factor -> TRUE .)
+    MINUS           reduce using rule 29 (factor -> TRUE .)
+    TIMES           reduce using rule 29 (factor -> TRUE .)
+    DIVIDE          reduce using rule 29 (factor -> TRUE .)
+    FLOORDIVIDE     reduce using rule 29 (factor -> TRUE .)
+    MODULUS         reduce using rule 29 (factor -> TRUE .)
+    POWER           reduce using rule 29 (factor -> TRUE .)
+    LBRACKET        reduce using rule 29 (factor -> TRUE .)
+    OR              reduce using rule 29 (factor -> TRUE .)
+    AND             reduce using rule 29 (factor -> TRUE .)
+    LESSTHAN        reduce using rule 29 (factor -> TRUE .)
+    LESSEQUALTHAN   reduce using rule 29 (factor -> TRUE .)
+    EQUAL           reduce using rule 29 (factor -> TRUE .)
+    NOTEQUAL        reduce using rule 29 (factor -> TRUE .)
+    GREATERTHAN     reduce using rule 29 (factor -> TRUE .)
+    GREATEREQUALTHAN reduce using rule 29 (factor -> TRUE .)
+    IN              reduce using rule 29 (factor -> TRUE .)
+    $end            reduce using rule 29 (factor -> TRUE .)
+    RPAREN          reduce using rule 29 (factor -> TRUE .)
+    COMMA           reduce using rule 29 (factor -> TRUE .)
+    RBRACKET        reduce using rule 29 (factor -> TRUE .)
+
+
+state 11
+
+    (30) factor -> FALSE .
+
+    PLUS            reduce using rule 30 (factor -> FALSE .)
+    MINUS           reduce using rule 30 (factor -> FALSE .)
+    TIMES           reduce using rule 30 (factor -> FALSE .)
+    DIVIDE          reduce using rule 30 (factor -> FALSE .)
+    FLOORDIVIDE     reduce using rule 30 (factor -> FALSE .)
+    MODULUS         reduce using rule 30 (factor -> FALSE .)
+    POWER           reduce using rule 30 (factor -> FALSE .)
+    LBRACKET        reduce using rule 30 (factor -> FALSE .)
+    OR              reduce using rule 30 (factor -> FALSE .)
+    AND             reduce using rule 30 (factor -> FALSE .)
+    LESSTHAN        reduce using rule 30 (factor -> FALSE .)
+    LESSEQUALTHAN   reduce using rule 30 (factor -> FALSE .)
+    EQUAL           reduce using rule 30 (factor -> FALSE .)
+    NOTEQUAL        reduce using rule 30 (factor -> FALSE .)
+    GREATERTHAN     reduce using rule 30 (factor -> FALSE .)
+    GREATEREQUALTHAN reduce using rule 30 (factor -> FALSE .)
+    IN              reduce using rule 30 (factor -> FALSE .)
+    $end            reduce using rule 30 (factor -> FALSE .)
+    RPAREN          reduce using rule 30 (factor -> FALSE .)
+    COMMA           reduce using rule 30 (factor -> FALSE .)
+    RBRACKET        reduce using rule 30 (factor -> FALSE .)
+
+
+state 12
+
+    (3) expression -> expression PLUS . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 34
+    factor                         shift and go to state 7
+
+state 13
+
+    (4) expression -> expression MINUS . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 35
+    factor                         shift and go to state 7
+
+state 14
+
+    (5) expression -> expression TIMES . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 36
+    factor                         shift and go to state 7
+
+state 15
+
+    (6) expression -> expression DIVIDE . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 37
+    factor                         shift and go to state 7
+
+state 16
+
+    (7) expression -> expression FLOORDIVIDE . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 38
+    factor                         shift and go to state 7
+
+state 17
+
+    (8) expression -> expression MODULUS . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 39
+    factor                         shift and go to state 7
+
+state 18
+
+    (9) expression -> expression POWER . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 40
+    factor                         shift and go to state 7
+
+state 19
+
+    (13) expression -> expression LBRACKET . expression RBRACKET
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 41
+    factor                         shift and go to state 7
+
+state 20
+
+    (14) expression -> expression OR . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 42
+    factor                         shift and go to state 7
+
+state 21
+
+    (15) expression -> expression AND . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 43
+    factor                         shift and go to state 7
+
+state 22
+
+    (16) expression -> expression LESSTHAN . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 44
+    factor                         shift and go to state 7
+
+state 23
+
+    (17) expression -> expression LESSEQUALTHAN . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 45
+    factor                         shift and go to state 7
+
+state 24
+
+    (18) expression -> expression EQUAL . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 46
+    factor                         shift and go to state 7
+
+state 25
+
+    (19) expression -> expression NOTEQUAL . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 47
+    factor                         shift and go to state 7
+
+state 26
+
+    (20) expression -> expression GREATERTHAN . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 48
+    factor                         shift and go to state 7
+
+state 27
+
+    (21) expression -> expression GREATEREQUALTHAN . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 49
+    factor                         shift and go to state 7
+
+state 28
+
+    (22) expression -> expression IN . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 50
+    factor                         shift and go to state 7
+
+state 29
+
+    (10) expression -> LPAREN expression . RPAREN
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    RPAREN          shift and go to state 51
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    FLOORDIVIDE     shift and go to state 16
+    MODULUS         shift and go to state 17
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+    OR              shift and go to state 20
+    AND             shift and go to state 21
+    LESSTHAN        shift and go to state 22
+    LESSEQUALTHAN   shift and go to state 23
+    EQUAL           shift and go to state 24
+    NOTEQUAL        shift and go to state 25
+    GREATERTHAN     shift and go to state 26
+    GREATEREQUALTHAN shift and go to state 27
+    IN              shift and go to state 28
+
+
+state 30
+
+    (11) expression -> LBRACKET list . RBRACKET
+
+    RBRACKET        shift and go to state 52
+
+
+state 31
+
+    (12) expression -> LBRACKET RBRACKET .
+
+    PLUS            reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    MINUS           reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    TIMES           reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    DIVIDE          reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    FLOORDIVIDE     reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    MODULUS         reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    POWER           reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    LBRACKET        reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    OR              reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    AND             reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    LESSTHAN        reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    LESSEQUALTHAN   reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    EQUAL           reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    NOTEQUAL        reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    GREATERTHAN     reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    GREATEREQUALTHAN reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    IN              reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    $end            reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    RPAREN          reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    COMMA           reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+    RBRACKET        reduce using rule 12 (expression -> LBRACKET RBRACKET .)
+
+
+state 32
+
+    (24) list -> expression . COMMA list
+    (25) list -> expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    COMMA           shift and go to state 53
+    RBRACKET        reduce using rule 25 (list -> expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    FLOORDIVIDE     shift and go to state 16
+    MODULUS         shift and go to state 17
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+    OR              shift and go to state 20
+    AND             shift and go to state 21
+    LESSTHAN        shift and go to state 22
+    LESSEQUALTHAN   shift and go to state 23
+    EQUAL           shift and go to state 24
+    NOTEQUAL        shift and go to state 25
+    GREATERTHAN     shift and go to state 26
+    GREATEREQUALTHAN shift and go to state 27
+    IN              shift and go to state 28
+
+
+state 33
+
+    (23) expression -> NOT expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    OR              reduce using rule 23 (expression -> NOT expression .)
+    AND             reduce using rule 23 (expression -> NOT expression .)
+    $end            reduce using rule 23 (expression -> NOT expression .)
+    RPAREN          reduce using rule 23 (expression -> NOT expression .)
+    COMMA           reduce using rule 23 (expression -> NOT expression .)
+    RBRACKET        reduce using rule 23 (expression -> NOT expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    FLOORDIVIDE     shift and go to state 16
+    MODULUS         shift and go to state 17
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+    LESSTHAN        shift and go to state 22
+    LESSEQUALTHAN   shift and go to state 23
+    EQUAL           shift and go to state 24
+    NOTEQUAL        shift and go to state 25
+    GREATERTHAN     shift and go to state 26
+    GREATEREQUALTHAN shift and go to state 27
+    IN              shift and go to state 28
+
+  ! PLUS            [ reduce using rule 23 (expression -> NOT expression .) ]
+  ! MINUS           [ reduce using rule 23 (expression -> NOT expression .) ]
+  ! TIMES           [ reduce using rule 23 (expression -> NOT expression .) ]
+  ! DIVIDE          [ reduce using rule 23 (expression -> NOT expression .) ]
+  ! FLOORDIVIDE     [ reduce using rule 23 (expression -> NOT expression .) ]
+  ! MODULUS         [ reduce using rule 23 (expression -> NOT expression .) ]
+  ! POWER           [ reduce using rule 23 (expression -> NOT expression .) ]
+  ! LBRACKET        [ reduce using rule 23 (expression -> NOT expression .) ]
+  ! LESSTHAN        [ reduce using rule 23 (expression -> NOT expression .) ]
+  ! LESSEQUALTHAN   [ reduce using rule 23 (expression -> NOT expression .) ]
+  ! EQUAL           [ reduce using rule 23 (expression -> NOT expression .) ]
+  ! NOTEQUAL        [ reduce using rule 23 (expression -> NOT expression .) ]
+  ! GREATERTHAN     [ reduce using rule 23 (expression -> NOT expression .) ]
+  ! GREATEREQUALTHAN [ reduce using rule 23 (expression -> NOT expression .) ]
+  ! IN              [ reduce using rule 23 (expression -> NOT expression .) ]
+  ! OR              [ shift and go to state 20 ]
+  ! AND             [ shift and go to state 21 ]
+
+
+state 34
+
+    (3) expression -> expression PLUS expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    PLUS            reduce using rule 3 (expression -> expression PLUS expression .)
+    MINUS           reduce using rule 3 (expression -> expression PLUS expression .)
+    OR              reduce using rule 3 (expression -> expression PLUS expression .)
+    AND             reduce using rule 3 (expression -> expression PLUS expression .)
+    LESSTHAN        reduce using rule 3 (expression -> expression PLUS expression .)
+    LESSEQUALTHAN   reduce using rule 3 (expression -> expression PLUS expression .)
+    EQUAL           reduce using rule 3 (expression -> expression PLUS expression .)
+    NOTEQUAL        reduce using rule 3 (expression -> expression PLUS expression .)
+    GREATERTHAN     reduce using rule 3 (expression -> expression PLUS expression .)
+    GREATEREQUALTHAN reduce using rule 3 (expression -> expression PLUS expression .)
+    IN              reduce using rule 3 (expression -> expression PLUS expression .)
+    $end            reduce using rule 3 (expression -> expression PLUS expression .)
+    RPAREN          reduce using rule 3 (expression -> expression PLUS expression .)
+    COMMA           reduce using rule 3 (expression -> expression PLUS expression .)
+    RBRACKET        reduce using rule 3 (expression -> expression PLUS expression .)
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    FLOORDIVIDE     shift and go to state 16
+    MODULUS         shift and go to state 17
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+
+  ! TIMES           [ reduce using rule 3 (expression -> expression PLUS expression .) ]
+  ! DIVIDE          [ reduce using rule 3 (expression -> expression PLUS expression .) ]
+  ! FLOORDIVIDE     [ reduce using rule 3 (expression -> expression PLUS expression .) ]
+  ! MODULUS         [ reduce using rule 3 (expression -> expression PLUS expression .) ]
+  ! POWER           [ reduce using rule 3 (expression -> expression PLUS expression .) ]
+  ! LBRACKET        [ reduce using rule 3 (expression -> expression PLUS expression .) ]
+  ! PLUS            [ shift and go to state 12 ]
+  ! MINUS           [ shift and go to state 13 ]
+  ! OR              [ shift and go to state 20 ]
+  ! AND             [ shift and go to state 21 ]
+  ! LESSTHAN        [ shift and go to state 22 ]
+  ! LESSEQUALTHAN   [ shift and go to state 23 ]
+  ! EQUAL           [ shift and go to state 24 ]
+  ! NOTEQUAL        [ shift and go to state 25 ]
+  ! GREATERTHAN     [ shift and go to state 26 ]
+  ! GREATEREQUALTHAN [ shift and go to state 27 ]
+  ! IN              [ shift and go to state 28 ]
+
+
+state 35
+
+    (4) expression -> expression MINUS expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    PLUS            reduce using rule 4 (expression -> expression MINUS expression .)
+    MINUS           reduce using rule 4 (expression -> expression MINUS expression .)
+    OR              reduce using rule 4 (expression -> expression MINUS expression .)
+    AND             reduce using rule 4 (expression -> expression MINUS expression .)
+    LESSTHAN        reduce using rule 4 (expression -> expression MINUS expression .)
+    LESSEQUALTHAN   reduce using rule 4 (expression -> expression MINUS expression .)
+    EQUAL           reduce using rule 4 (expression -> expression MINUS expression .)
+    NOTEQUAL        reduce using rule 4 (expression -> expression MINUS expression .)
+    GREATERTHAN     reduce using rule 4 (expression -> expression MINUS expression .)
+    GREATEREQUALTHAN reduce using rule 4 (expression -> expression MINUS expression .)
+    IN              reduce using rule 4 (expression -> expression MINUS expression .)
+    $end            reduce using rule 4 (expression -> expression MINUS expression .)
+    RPAREN          reduce using rule 4 (expression -> expression MINUS expression .)
+    COMMA           reduce using rule 4 (expression -> expression MINUS expression .)
+    RBRACKET        reduce using rule 4 (expression -> expression MINUS expression .)
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    FLOORDIVIDE     shift and go to state 16
+    MODULUS         shift and go to state 17
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+
+  ! TIMES           [ reduce using rule 4 (expression -> expression MINUS expression .) ]
+  ! DIVIDE          [ reduce using rule 4 (expression -> expression MINUS expression .) ]
+  ! FLOORDIVIDE     [ reduce using rule 4 (expression -> expression MINUS expression .) ]
+  ! MODULUS         [ reduce using rule 4 (expression -> expression MINUS expression .) ]
+  ! POWER           [ reduce using rule 4 (expression -> expression MINUS expression .) ]
+  ! LBRACKET        [ reduce using rule 4 (expression -> expression MINUS expression .) ]
+  ! PLUS            [ shift and go to state 12 ]
+  ! MINUS           [ shift and go to state 13 ]
+  ! OR              [ shift and go to state 20 ]
+  ! AND             [ shift and go to state 21 ]
+  ! LESSTHAN        [ shift and go to state 22 ]
+  ! LESSEQUALTHAN   [ shift and go to state 23 ]
+  ! EQUAL           [ shift and go to state 24 ]
+  ! NOTEQUAL        [ shift and go to state 25 ]
+  ! GREATERTHAN     [ shift and go to state 26 ]
+  ! GREATEREQUALTHAN [ shift and go to state 27 ]
+  ! IN              [ shift and go to state 28 ]
+
+
+state 36
+
+    (5) expression -> expression TIMES expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    PLUS            reduce using rule 5 (expression -> expression TIMES expression .)
+    MINUS           reduce using rule 5 (expression -> expression TIMES expression .)
+    TIMES           reduce using rule 5 (expression -> expression TIMES expression .)
+    DIVIDE          reduce using rule 5 (expression -> expression TIMES expression .)
+    FLOORDIVIDE     reduce using rule 5 (expression -> expression TIMES expression .)
+    MODULUS         reduce using rule 5 (expression -> expression TIMES expression .)
+    OR              reduce using rule 5 (expression -> expression TIMES expression .)
+    AND             reduce using rule 5 (expression -> expression TIMES expression .)
+    LESSTHAN        reduce using rule 5 (expression -> expression TIMES expression .)
+    LESSEQUALTHAN   reduce using rule 5 (expression -> expression TIMES expression .)
+    EQUAL           reduce using rule 5 (expression -> expression TIMES expression .)
+    NOTEQUAL        reduce using rule 5 (expression -> expression TIMES expression .)
+    GREATERTHAN     reduce using rule 5 (expression -> expression TIMES expression .)
+    GREATEREQUALTHAN reduce using rule 5 (expression -> expression TIMES expression .)
+    IN              reduce using rule 5 (expression -> expression TIMES expression .)
+    $end            reduce using rule 5 (expression -> expression TIMES expression .)
+    RPAREN          reduce using rule 5 (expression -> expression TIMES expression .)
+    COMMA           reduce using rule 5 (expression -> expression TIMES expression .)
+    RBRACKET        reduce using rule 5 (expression -> expression TIMES expression .)
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+
+  ! POWER           [ reduce using rule 5 (expression -> expression TIMES expression .) ]
+  ! LBRACKET        [ reduce using rule 5 (expression -> expression TIMES expression .) ]
+  ! PLUS            [ shift and go to state 12 ]
+  ! MINUS           [ shift and go to state 13 ]
+  ! TIMES           [ shift and go to state 14 ]
+  ! DIVIDE          [ shift and go to state 15 ]
+  ! FLOORDIVIDE     [ shift and go to state 16 ]
+  ! MODULUS         [ shift and go to state 17 ]
+  ! OR              [ shift and go to state 20 ]
+  ! AND             [ shift and go to state 21 ]
+  ! LESSTHAN        [ shift and go to state 22 ]
+  ! LESSEQUALTHAN   [ shift and go to state 23 ]
+  ! EQUAL           [ shift and go to state 24 ]
+  ! NOTEQUAL        [ shift and go to state 25 ]
+  ! GREATERTHAN     [ shift and go to state 26 ]
+  ! GREATEREQUALTHAN [ shift and go to state 27 ]
+  ! IN              [ shift and go to state 28 ]
+
+
+state 37
+
+    (6) expression -> expression DIVIDE expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    PLUS            reduce using rule 6 (expression -> expression DIVIDE expression .)
+    MINUS           reduce using rule 6 (expression -> expression DIVIDE expression .)
+    TIMES           reduce using rule 6 (expression -> expression DIVIDE expression .)
+    DIVIDE          reduce using rule 6 (expression -> expression DIVIDE expression .)
+    FLOORDIVIDE     reduce using rule 6 (expression -> expression DIVIDE expression .)
+    MODULUS         reduce using rule 6 (expression -> expression DIVIDE expression .)
+    OR              reduce using rule 6 (expression -> expression DIVIDE expression .)
+    AND             reduce using rule 6 (expression -> expression DIVIDE expression .)
+    LESSTHAN        reduce using rule 6 (expression -> expression DIVIDE expression .)
+    LESSEQUALTHAN   reduce using rule 6 (expression -> expression DIVIDE expression .)
+    EQUAL           reduce using rule 6 (expression -> expression DIVIDE expression .)
+    NOTEQUAL        reduce using rule 6 (expression -> expression DIVIDE expression .)
+    GREATERTHAN     reduce using rule 6 (expression -> expression DIVIDE expression .)
+    GREATEREQUALTHAN reduce using rule 6 (expression -> expression DIVIDE expression .)
+    IN              reduce using rule 6 (expression -> expression DIVIDE expression .)
+    $end            reduce using rule 6 (expression -> expression DIVIDE expression .)
+    RPAREN          reduce using rule 6 (expression -> expression DIVIDE expression .)
+    COMMA           reduce using rule 6 (expression -> expression DIVIDE expression .)
+    RBRACKET        reduce using rule 6 (expression -> expression DIVIDE expression .)
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+
+  ! POWER           [ reduce using rule 6 (expression -> expression DIVIDE expression .) ]
+  ! LBRACKET        [ reduce using rule 6 (expression -> expression DIVIDE expression .) ]
+  ! PLUS            [ shift and go to state 12 ]
+  ! MINUS           [ shift and go to state 13 ]
+  ! TIMES           [ shift and go to state 14 ]
+  ! DIVIDE          [ shift and go to state 15 ]
+  ! FLOORDIVIDE     [ shift and go to state 16 ]
+  ! MODULUS         [ shift and go to state 17 ]
+  ! OR              [ shift and go to state 20 ]
+  ! AND             [ shift and go to state 21 ]
+  ! LESSTHAN        [ shift and go to state 22 ]
+  ! LESSEQUALTHAN   [ shift and go to state 23 ]
+  ! EQUAL           [ shift and go to state 24 ]
+  ! NOTEQUAL        [ shift and go to state 25 ]
+  ! GREATERTHAN     [ shift and go to state 26 ]
+  ! GREATEREQUALTHAN [ shift and go to state 27 ]
+  ! IN              [ shift and go to state 28 ]
+
+
+state 38
+
+    (7) expression -> expression FLOORDIVIDE expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    PLUS            reduce using rule 7 (expression -> expression FLOORDIVIDE expression .)
+    MINUS           reduce using rule 7 (expression -> expression FLOORDIVIDE expression .)
+    FLOORDIVIDE     reduce using rule 7 (expression -> expression FLOORDIVIDE expression .)
+    OR              reduce using rule 7 (expression -> expression FLOORDIVIDE expression .)
+    AND             reduce using rule 7 (expression -> expression FLOORDIVIDE expression .)
+    LESSTHAN        reduce using rule 7 (expression -> expression FLOORDIVIDE expression .)
+    LESSEQUALTHAN   reduce using rule 7 (expression -> expression FLOORDIVIDE expression .)
+    EQUAL           reduce using rule 7 (expression -> expression FLOORDIVIDE expression .)
+    NOTEQUAL        reduce using rule 7 (expression -> expression FLOORDIVIDE expression .)
+    GREATERTHAN     reduce using rule 7 (expression -> expression FLOORDIVIDE expression .)
+    GREATEREQUALTHAN reduce using rule 7 (expression -> expression FLOORDIVIDE expression .)
+    IN              reduce using rule 7 (expression -> expression FLOORDIVIDE expression .)
+    $end            reduce using rule 7 (expression -> expression FLOORDIVIDE expression .)
+    RPAREN          reduce using rule 7 (expression -> expression FLOORDIVIDE expression .)
+    COMMA           reduce using rule 7 (expression -> expression FLOORDIVIDE expression .)
+    RBRACKET        reduce using rule 7 (expression -> expression FLOORDIVIDE expression .)
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    MODULUS         shift and go to state 17
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+
+  ! TIMES           [ reduce using rule 7 (expression -> expression FLOORDIVIDE expression .) ]
+  ! DIVIDE          [ reduce using rule 7 (expression -> expression FLOORDIVIDE expression .) ]
+  ! MODULUS         [ reduce using rule 7 (expression -> expression FLOORDIVIDE expression .) ]
+  ! POWER           [ reduce using rule 7 (expression -> expression FLOORDIVIDE expression .) ]
+  ! LBRACKET        [ reduce using rule 7 (expression -> expression FLOORDIVIDE expression .) ]
+  ! PLUS            [ shift and go to state 12 ]
+  ! MINUS           [ shift and go to state 13 ]
+  ! FLOORDIVIDE     [ shift and go to state 16 ]
+  ! OR              [ shift and go to state 20 ]
+  ! AND             [ shift and go to state 21 ]
+  ! LESSTHAN        [ shift and go to state 22 ]
+  ! LESSEQUALTHAN   [ shift and go to state 23 ]
+  ! EQUAL           [ shift and go to state 24 ]
+  ! NOTEQUAL        [ shift and go to state 25 ]
+  ! GREATERTHAN     [ shift and go to state 26 ]
+  ! GREATEREQUALTHAN [ shift and go to state 27 ]
+  ! IN              [ shift and go to state 28 ]
+
+
+state 39
+
+    (8) expression -> expression MODULUS expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    PLUS            reduce using rule 8 (expression -> expression MODULUS expression .)
+    MINUS           reduce using rule 8 (expression -> expression MODULUS expression .)
+    FLOORDIVIDE     reduce using rule 8 (expression -> expression MODULUS expression .)
+    MODULUS         reduce using rule 8 (expression -> expression MODULUS expression .)
+    OR              reduce using rule 8 (expression -> expression MODULUS expression .)
+    AND             reduce using rule 8 (expression -> expression MODULUS expression .)
+    LESSTHAN        reduce using rule 8 (expression -> expression MODULUS expression .)
+    LESSEQUALTHAN   reduce using rule 8 (expression -> expression MODULUS expression .)
+    EQUAL           reduce using rule 8 (expression -> expression MODULUS expression .)
+    NOTEQUAL        reduce using rule 8 (expression -> expression MODULUS expression .)
+    GREATERTHAN     reduce using rule 8 (expression -> expression MODULUS expression .)
+    GREATEREQUALTHAN reduce using rule 8 (expression -> expression MODULUS expression .)
+    IN              reduce using rule 8 (expression -> expression MODULUS expression .)
+    $end            reduce using rule 8 (expression -> expression MODULUS expression .)
+    RPAREN          reduce using rule 8 (expression -> expression MODULUS expression .)
+    COMMA           reduce using rule 8 (expression -> expression MODULUS expression .)
+    RBRACKET        reduce using rule 8 (expression -> expression MODULUS expression .)
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+
+  ! TIMES           [ reduce using rule 8 (expression -> expression MODULUS expression .) ]
+  ! DIVIDE          [ reduce using rule 8 (expression -> expression MODULUS expression .) ]
+  ! POWER           [ reduce using rule 8 (expression -> expression MODULUS expression .) ]
+  ! LBRACKET        [ reduce using rule 8 (expression -> expression MODULUS expression .) ]
+  ! PLUS            [ shift and go to state 12 ]
+  ! MINUS           [ shift and go to state 13 ]
+  ! FLOORDIVIDE     [ shift and go to state 16 ]
+  ! MODULUS         [ shift and go to state 17 ]
+  ! OR              [ shift and go to state 20 ]
+  ! AND             [ shift and go to state 21 ]
+  ! LESSTHAN        [ shift and go to state 22 ]
+  ! LESSEQUALTHAN   [ shift and go to state 23 ]
+  ! EQUAL           [ shift and go to state 24 ]
+  ! NOTEQUAL        [ shift and go to state 25 ]
+  ! GREATERTHAN     [ shift and go to state 26 ]
+  ! GREATEREQUALTHAN [ shift and go to state 27 ]
+  ! IN              [ shift and go to state 28 ]
+
+
+state 40
+
+    (9) expression -> expression POWER expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    PLUS            reduce using rule 9 (expression -> expression POWER expression .)
+    MINUS           reduce using rule 9 (expression -> expression POWER expression .)
+    TIMES           reduce using rule 9 (expression -> expression POWER expression .)
+    DIVIDE          reduce using rule 9 (expression -> expression POWER expression .)
+    FLOORDIVIDE     reduce using rule 9 (expression -> expression POWER expression .)
+    MODULUS         reduce using rule 9 (expression -> expression POWER expression .)
+    OR              reduce using rule 9 (expression -> expression POWER expression .)
+    AND             reduce using rule 9 (expression -> expression POWER expression .)
+    LESSTHAN        reduce using rule 9 (expression -> expression POWER expression .)
+    LESSEQUALTHAN   reduce using rule 9 (expression -> expression POWER expression .)
+    EQUAL           reduce using rule 9 (expression -> expression POWER expression .)
+    NOTEQUAL        reduce using rule 9 (expression -> expression POWER expression .)
+    GREATERTHAN     reduce using rule 9 (expression -> expression POWER expression .)
+    GREATEREQUALTHAN reduce using rule 9 (expression -> expression POWER expression .)
+    IN              reduce using rule 9 (expression -> expression POWER expression .)
+    $end            reduce using rule 9 (expression -> expression POWER expression .)
+    RPAREN          reduce using rule 9 (expression -> expression POWER expression .)
+    COMMA           reduce using rule 9 (expression -> expression POWER expression .)
+    RBRACKET        reduce using rule 9 (expression -> expression POWER expression .)
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+
+  ! POWER           [ reduce using rule 9 (expression -> expression POWER expression .) ]
+  ! LBRACKET        [ reduce using rule 9 (expression -> expression POWER expression .) ]
+  ! PLUS            [ shift and go to state 12 ]
+  ! MINUS           [ shift and go to state 13 ]
+  ! TIMES           [ shift and go to state 14 ]
+  ! DIVIDE          [ shift and go to state 15 ]
+  ! FLOORDIVIDE     [ shift and go to state 16 ]
+  ! MODULUS         [ shift and go to state 17 ]
+  ! OR              [ shift and go to state 20 ]
+  ! AND             [ shift and go to state 21 ]
+  ! LESSTHAN        [ shift and go to state 22 ]
+  ! LESSEQUALTHAN   [ shift and go to state 23 ]
+  ! EQUAL           [ shift and go to state 24 ]
+  ! NOTEQUAL        [ shift and go to state 25 ]
+  ! GREATERTHAN     [ shift and go to state 26 ]
+  ! GREATEREQUALTHAN [ shift and go to state 27 ]
+  ! IN              [ shift and go to state 28 ]
+
+
+state 41
+
+    (13) expression -> expression LBRACKET expression . RBRACKET
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    RBRACKET        shift and go to state 54
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    FLOORDIVIDE     shift and go to state 16
+    MODULUS         shift and go to state 17
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+    OR              shift and go to state 20
+    AND             shift and go to state 21
+    LESSTHAN        shift and go to state 22
+    LESSEQUALTHAN   shift and go to state 23
+    EQUAL           shift and go to state 24
+    NOTEQUAL        shift and go to state 25
+    GREATERTHAN     shift and go to state 26
+    GREATEREQUALTHAN shift and go to state 27
+    IN              shift and go to state 28
+
+
+state 42
+
+    (14) expression -> expression OR expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    OR              reduce using rule 14 (expression -> expression OR expression .)
+    $end            reduce using rule 14 (expression -> expression OR expression .)
+    RPAREN          reduce using rule 14 (expression -> expression OR expression .)
+    COMMA           reduce using rule 14 (expression -> expression OR expression .)
+    RBRACKET        reduce using rule 14 (expression -> expression OR expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    FLOORDIVIDE     shift and go to state 16
+    MODULUS         shift and go to state 17
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+    AND             shift and go to state 21
+    LESSTHAN        shift and go to state 22
+    LESSEQUALTHAN   shift and go to state 23
+    EQUAL           shift and go to state 24
+    NOTEQUAL        shift and go to state 25
+    GREATERTHAN     shift and go to state 26
+    GREATEREQUALTHAN shift and go to state 27
+    IN              shift and go to state 28
+
+  ! PLUS            [ reduce using rule 14 (expression -> expression OR expression .) ]
+  ! MINUS           [ reduce using rule 14 (expression -> expression OR expression .) ]
+  ! TIMES           [ reduce using rule 14 (expression -> expression OR expression .) ]
+  ! DIVIDE          [ reduce using rule 14 (expression -> expression OR expression .) ]
+  ! FLOORDIVIDE     [ reduce using rule 14 (expression -> expression OR expression .) ]
+  ! MODULUS         [ reduce using rule 14 (expression -> expression OR expression .) ]
+  ! POWER           [ reduce using rule 14 (expression -> expression OR expression .) ]
+  ! LBRACKET        [ reduce using rule 14 (expression -> expression OR expression .) ]
+  ! AND             [ reduce using rule 14 (expression -> expression OR expression .) ]
+  ! LESSTHAN        [ reduce using rule 14 (expression -> expression OR expression .) ]
+  ! LESSEQUALTHAN   [ reduce using rule 14 (expression -> expression OR expression .) ]
+  ! EQUAL           [ reduce using rule 14 (expression -> expression OR expression .) ]
+  ! NOTEQUAL        [ reduce using rule 14 (expression -> expression OR expression .) ]
+  ! GREATERTHAN     [ reduce using rule 14 (expression -> expression OR expression .) ]
+  ! GREATEREQUALTHAN [ reduce using rule 14 (expression -> expression OR expression .) ]
+  ! IN              [ reduce using rule 14 (expression -> expression OR expression .) ]
+  ! OR              [ shift and go to state 20 ]
+
+
+state 43
+
+    (15) expression -> expression AND expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    OR              reduce using rule 15 (expression -> expression AND expression .)
+    AND             reduce using rule 15 (expression -> expression AND expression .)
+    $end            reduce using rule 15 (expression -> expression AND expression .)
+    RPAREN          reduce using rule 15 (expression -> expression AND expression .)
+    COMMA           reduce using rule 15 (expression -> expression AND expression .)
+    RBRACKET        reduce using rule 15 (expression -> expression AND expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    FLOORDIVIDE     shift and go to state 16
+    MODULUS         shift and go to state 17
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+    LESSTHAN        shift and go to state 22
+    LESSEQUALTHAN   shift and go to state 23
+    EQUAL           shift and go to state 24
+    NOTEQUAL        shift and go to state 25
+    GREATERTHAN     shift and go to state 26
+    GREATEREQUALTHAN shift and go to state 27
+    IN              shift and go to state 28
+
+  ! PLUS            [ reduce using rule 15 (expression -> expression AND expression .) ]
+  ! MINUS           [ reduce using rule 15 (expression -> expression AND expression .) ]
+  ! TIMES           [ reduce using rule 15 (expression -> expression AND expression .) ]
+  ! DIVIDE          [ reduce using rule 15 (expression -> expression AND expression .) ]
+  ! FLOORDIVIDE     [ reduce using rule 15 (expression -> expression AND expression .) ]
+  ! MODULUS         [ reduce using rule 15 (expression -> expression AND expression .) ]
+  ! POWER           [ reduce using rule 15 (expression -> expression AND expression .) ]
+  ! LBRACKET        [ reduce using rule 15 (expression -> expression AND expression .) ]
+  ! LESSTHAN        [ reduce using rule 15 (expression -> expression AND expression .) ]
+  ! LESSEQUALTHAN   [ reduce using rule 15 (expression -> expression AND expression .) ]
+  ! EQUAL           [ reduce using rule 15 (expression -> expression AND expression .) ]
+  ! NOTEQUAL        [ reduce using rule 15 (expression -> expression AND expression .) ]
+  ! GREATERTHAN     [ reduce using rule 15 (expression -> expression AND expression .) ]
+  ! GREATEREQUALTHAN [ reduce using rule 15 (expression -> expression AND expression .) ]
+  ! IN              [ reduce using rule 15 (expression -> expression AND expression .) ]
+  ! OR              [ shift and go to state 20 ]
+  ! AND             [ shift and go to state 21 ]
+
+
+state 44
+
+    (16) expression -> expression LESSTHAN expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    OR              reduce using rule 16 (expression -> expression LESSTHAN expression .)
+    AND             reduce using rule 16 (expression -> expression LESSTHAN expression .)
+    LESSTHAN        reduce using rule 16 (expression -> expression LESSTHAN expression .)
+    LESSEQUALTHAN   reduce using rule 16 (expression -> expression LESSTHAN expression .)
+    EQUAL           reduce using rule 16 (expression -> expression LESSTHAN expression .)
+    NOTEQUAL        reduce using rule 16 (expression -> expression LESSTHAN expression .)
+    GREATERTHAN     reduce using rule 16 (expression -> expression LESSTHAN expression .)
+    GREATEREQUALTHAN reduce using rule 16 (expression -> expression LESSTHAN expression .)
+    $end            reduce using rule 16 (expression -> expression LESSTHAN expression .)
+    RPAREN          reduce using rule 16 (expression -> expression LESSTHAN expression .)
+    COMMA           reduce using rule 16 (expression -> expression LESSTHAN expression .)
+    RBRACKET        reduce using rule 16 (expression -> expression LESSTHAN expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    FLOORDIVIDE     shift and go to state 16
+    MODULUS         shift and go to state 17
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+    IN              shift and go to state 28
+
+  ! PLUS            [ reduce using rule 16 (expression -> expression LESSTHAN expression .) ]
+  ! MINUS           [ reduce using rule 16 (expression -> expression LESSTHAN expression .) ]
+  ! TIMES           [ reduce using rule 16 (expression -> expression LESSTHAN expression .) ]
+  ! DIVIDE          [ reduce using rule 16 (expression -> expression LESSTHAN expression .) ]
+  ! FLOORDIVIDE     [ reduce using rule 16 (expression -> expression LESSTHAN expression .) ]
+  ! MODULUS         [ reduce using rule 16 (expression -> expression LESSTHAN expression .) ]
+  ! POWER           [ reduce using rule 16 (expression -> expression LESSTHAN expression .) ]
+  ! LBRACKET        [ reduce using rule 16 (expression -> expression LESSTHAN expression .) ]
+  ! IN              [ reduce using rule 16 (expression -> expression LESSTHAN expression .) ]
+  ! OR              [ shift and go to state 20 ]
+  ! AND             [ shift and go to state 21 ]
+  ! LESSTHAN        [ shift and go to state 22 ]
+  ! LESSEQUALTHAN   [ shift and go to state 23 ]
+  ! EQUAL           [ shift and go to state 24 ]
+  ! NOTEQUAL        [ shift and go to state 25 ]
+  ! GREATERTHAN     [ shift and go to state 26 ]
+  ! GREATEREQUALTHAN [ shift and go to state 27 ]
+
+
+state 45
+
+    (17) expression -> expression LESSEQUALTHAN expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    OR              reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .)
+    AND             reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .)
+    LESSTHAN        reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .)
+    LESSEQUALTHAN   reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .)
+    EQUAL           reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .)
+    NOTEQUAL        reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .)
+    GREATERTHAN     reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .)
+    GREATEREQUALTHAN reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .)
+    $end            reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .)
+    RPAREN          reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .)
+    COMMA           reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .)
+    RBRACKET        reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    FLOORDIVIDE     shift and go to state 16
+    MODULUS         shift and go to state 17
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+    IN              shift and go to state 28
+
+  ! PLUS            [ reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .) ]
+  ! MINUS           [ reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .) ]
+  ! TIMES           [ reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .) ]
+  ! DIVIDE          [ reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .) ]
+  ! FLOORDIVIDE     [ reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .) ]
+  ! MODULUS         [ reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .) ]
+  ! POWER           [ reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .) ]
+  ! LBRACKET        [ reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .) ]
+  ! IN              [ reduce using rule 17 (expression -> expression LESSEQUALTHAN expression .) ]
+  ! OR              [ shift and go to state 20 ]
+  ! AND             [ shift and go to state 21 ]
+  ! LESSTHAN        [ shift and go to state 22 ]
+  ! LESSEQUALTHAN   [ shift and go to state 23 ]
+  ! EQUAL           [ shift and go to state 24 ]
+  ! NOTEQUAL        [ shift and go to state 25 ]
+  ! GREATERTHAN     [ shift and go to state 26 ]
+  ! GREATEREQUALTHAN [ shift and go to state 27 ]
+
+
+state 46
+
+    (18) expression -> expression EQUAL expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    OR              reduce using rule 18 (expression -> expression EQUAL expression .)
+    AND             reduce using rule 18 (expression -> expression EQUAL expression .)
+    LESSTHAN        reduce using rule 18 (expression -> expression EQUAL expression .)
+    LESSEQUALTHAN   reduce using rule 18 (expression -> expression EQUAL expression .)
+    EQUAL           reduce using rule 18 (expression -> expression EQUAL expression .)
+    NOTEQUAL        reduce using rule 18 (expression -> expression EQUAL expression .)
+    GREATERTHAN     reduce using rule 18 (expression -> expression EQUAL expression .)
+    GREATEREQUALTHAN reduce using rule 18 (expression -> expression EQUAL expression .)
+    $end            reduce using rule 18 (expression -> expression EQUAL expression .)
+    RPAREN          reduce using rule 18 (expression -> expression EQUAL expression .)
+    COMMA           reduce using rule 18 (expression -> expression EQUAL expression .)
+    RBRACKET        reduce using rule 18 (expression -> expression EQUAL expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    FLOORDIVIDE     shift and go to state 16
+    MODULUS         shift and go to state 17
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+    IN              shift and go to state 28
+
+  ! PLUS            [ reduce using rule 18 (expression -> expression EQUAL expression .) ]
+  ! MINUS           [ reduce using rule 18 (expression -> expression EQUAL expression .) ]
+  ! TIMES           [ reduce using rule 18 (expression -> expression EQUAL expression .) ]
+  ! DIVIDE          [ reduce using rule 18 (expression -> expression EQUAL expression .) ]
+  ! FLOORDIVIDE     [ reduce using rule 18 (expression -> expression EQUAL expression .) ]
+  ! MODULUS         [ reduce using rule 18 (expression -> expression EQUAL expression .) ]
+  ! POWER           [ reduce using rule 18 (expression -> expression EQUAL expression .) ]
+  ! LBRACKET        [ reduce using rule 18 (expression -> expression EQUAL expression .) ]
+  ! IN              [ reduce using rule 18 (expression -> expression EQUAL expression .) ]
+  ! OR              [ shift and go to state 20 ]
+  ! AND             [ shift and go to state 21 ]
+  ! LESSTHAN        [ shift and go to state 22 ]
+  ! LESSEQUALTHAN   [ shift and go to state 23 ]
+  ! EQUAL           [ shift and go to state 24 ]
+  ! NOTEQUAL        [ shift and go to state 25 ]
+  ! GREATERTHAN     [ shift and go to state 26 ]
+  ! GREATEREQUALTHAN [ shift and go to state 27 ]
+
+
+state 47
+
+    (19) expression -> expression NOTEQUAL expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    OR              reduce using rule 19 (expression -> expression NOTEQUAL expression .)
+    AND             reduce using rule 19 (expression -> expression NOTEQUAL expression .)
+    LESSTHAN        reduce using rule 19 (expression -> expression NOTEQUAL expression .)
+    LESSEQUALTHAN   reduce using rule 19 (expression -> expression NOTEQUAL expression .)
+    EQUAL           reduce using rule 19 (expression -> expression NOTEQUAL expression .)
+    NOTEQUAL        reduce using rule 19 (expression -> expression NOTEQUAL expression .)
+    GREATERTHAN     reduce using rule 19 (expression -> expression NOTEQUAL expression .)
+    GREATEREQUALTHAN reduce using rule 19 (expression -> expression NOTEQUAL expression .)
+    $end            reduce using rule 19 (expression -> expression NOTEQUAL expression .)
+    RPAREN          reduce using rule 19 (expression -> expression NOTEQUAL expression .)
+    COMMA           reduce using rule 19 (expression -> expression NOTEQUAL expression .)
+    RBRACKET        reduce using rule 19 (expression -> expression NOTEQUAL expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    FLOORDIVIDE     shift and go to state 16
+    MODULUS         shift and go to state 17
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+    IN              shift and go to state 28
+
+  ! PLUS            [ reduce using rule 19 (expression -> expression NOTEQUAL expression .) ]
+  ! MINUS           [ reduce using rule 19 (expression -> expression NOTEQUAL expression .) ]
+  ! TIMES           [ reduce using rule 19 (expression -> expression NOTEQUAL expression .) ]
+  ! DIVIDE          [ reduce using rule 19 (expression -> expression NOTEQUAL expression .) ]
+  ! FLOORDIVIDE     [ reduce using rule 19 (expression -> expression NOTEQUAL expression .) ]
+  ! MODULUS         [ reduce using rule 19 (expression -> expression NOTEQUAL expression .) ]
+  ! POWER           [ reduce using rule 19 (expression -> expression NOTEQUAL expression .) ]
+  ! LBRACKET        [ reduce using rule 19 (expression -> expression NOTEQUAL expression .) ]
+  ! IN              [ reduce using rule 19 (expression -> expression NOTEQUAL expression .) ]
+  ! OR              [ shift and go to state 20 ]
+  ! AND             [ shift and go to state 21 ]
+  ! LESSTHAN        [ shift and go to state 22 ]
+  ! LESSEQUALTHAN   [ shift and go to state 23 ]
+  ! EQUAL           [ shift and go to state 24 ]
+  ! NOTEQUAL        [ shift and go to state 25 ]
+  ! GREATERTHAN     [ shift and go to state 26 ]
+  ! GREATEREQUALTHAN [ shift and go to state 27 ]
+
+
+state 48
+
+    (20) expression -> expression GREATERTHAN expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    OR              reduce using rule 20 (expression -> expression GREATERTHAN expression .)
+    AND             reduce using rule 20 (expression -> expression GREATERTHAN expression .)
+    LESSTHAN        reduce using rule 20 (expression -> expression GREATERTHAN expression .)
+    LESSEQUALTHAN   reduce using rule 20 (expression -> expression GREATERTHAN expression .)
+    EQUAL           reduce using rule 20 (expression -> expression GREATERTHAN expression .)
+    NOTEQUAL        reduce using rule 20 (expression -> expression GREATERTHAN expression .)
+    GREATERTHAN     reduce using rule 20 (expression -> expression GREATERTHAN expression .)
+    GREATEREQUALTHAN reduce using rule 20 (expression -> expression GREATERTHAN expression .)
+    $end            reduce using rule 20 (expression -> expression GREATERTHAN expression .)
+    RPAREN          reduce using rule 20 (expression -> expression GREATERTHAN expression .)
+    COMMA           reduce using rule 20 (expression -> expression GREATERTHAN expression .)
+    RBRACKET        reduce using rule 20 (expression -> expression GREATERTHAN expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    FLOORDIVIDE     shift and go to state 16
+    MODULUS         shift and go to state 17
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+    IN              shift and go to state 28
+
+  ! PLUS            [ reduce using rule 20 (expression -> expression GREATERTHAN expression .) ]
+  ! MINUS           [ reduce using rule 20 (expression -> expression GREATERTHAN expression .) ]
+  ! TIMES           [ reduce using rule 20 (expression -> expression GREATERTHAN expression .) ]
+  ! DIVIDE          [ reduce using rule 20 (expression -> expression GREATERTHAN expression .) ]
+  ! FLOORDIVIDE     [ reduce using rule 20 (expression -> expression GREATERTHAN expression .) ]
+  ! MODULUS         [ reduce using rule 20 (expression -> expression GREATERTHAN expression .) ]
+  ! POWER           [ reduce using rule 20 (expression -> expression GREATERTHAN expression .) ]
+  ! LBRACKET        [ reduce using rule 20 (expression -> expression GREATERTHAN expression .) ]
+  ! IN              [ reduce using rule 20 (expression -> expression GREATERTHAN expression .) ]
+  ! OR              [ shift and go to state 20 ]
+  ! AND             [ shift and go to state 21 ]
+  ! LESSTHAN        [ shift and go to state 22 ]
+  ! LESSEQUALTHAN   [ shift and go to state 23 ]
+  ! EQUAL           [ shift and go to state 24 ]
+  ! NOTEQUAL        [ shift and go to state 25 ]
+  ! GREATERTHAN     [ shift and go to state 26 ]
+  ! GREATEREQUALTHAN [ shift and go to state 27 ]
+
+
+state 49
+
+    (21) expression -> expression GREATEREQUALTHAN expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    OR              reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .)
+    AND             reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .)
+    LESSTHAN        reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .)
+    LESSEQUALTHAN   reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .)
+    EQUAL           reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .)
+    NOTEQUAL        reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .)
+    GREATERTHAN     reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .)
+    GREATEREQUALTHAN reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .)
+    $end            reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .)
+    RPAREN          reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .)
+    COMMA           reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .)
+    RBRACKET        reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    FLOORDIVIDE     shift and go to state 16
+    MODULUS         shift and go to state 17
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+    IN              shift and go to state 28
+
+  ! PLUS            [ reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .) ]
+  ! MINUS           [ reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .) ]
+  ! TIMES           [ reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .) ]
+  ! DIVIDE          [ reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .) ]
+  ! FLOORDIVIDE     [ reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .) ]
+  ! MODULUS         [ reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .) ]
+  ! POWER           [ reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .) ]
+  ! LBRACKET        [ reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .) ]
+  ! IN              [ reduce using rule 21 (expression -> expression GREATEREQUALTHAN expression .) ]
+  ! OR              [ shift and go to state 20 ]
+  ! AND             [ shift and go to state 21 ]
+  ! LESSTHAN        [ shift and go to state 22 ]
+  ! LESSEQUALTHAN   [ shift and go to state 23 ]
+  ! EQUAL           [ shift and go to state 24 ]
+  ! NOTEQUAL        [ shift and go to state 25 ]
+  ! GREATERTHAN     [ shift and go to state 26 ]
+  ! GREATEREQUALTHAN [ shift and go to state 27 ]
+
+
+state 50
+
+    (22) expression -> expression IN expression .
+    (3) expression -> expression . PLUS expression
+    (4) expression -> expression . MINUS expression
+    (5) expression -> expression . TIMES expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . FLOORDIVIDE expression
+    (8) expression -> expression . MODULUS expression
+    (9) expression -> expression . POWER expression
+    (13) expression -> expression . LBRACKET expression RBRACKET
+    (14) expression -> expression . OR expression
+    (15) expression -> expression . AND expression
+    (16) expression -> expression . LESSTHAN expression
+    (17) expression -> expression . LESSEQUALTHAN expression
+    (18) expression -> expression . EQUAL expression
+    (19) expression -> expression . NOTEQUAL expression
+    (20) expression -> expression . GREATERTHAN expression
+    (21) expression -> expression . GREATEREQUALTHAN expression
+    (22) expression -> expression . IN expression
+
+    OR              reduce using rule 22 (expression -> expression IN expression .)
+    AND             reduce using rule 22 (expression -> expression IN expression .)
+    LESSTHAN        reduce using rule 22 (expression -> expression IN expression .)
+    LESSEQUALTHAN   reduce using rule 22 (expression -> expression IN expression .)
+    EQUAL           reduce using rule 22 (expression -> expression IN expression .)
+    NOTEQUAL        reduce using rule 22 (expression -> expression IN expression .)
+    GREATERTHAN     reduce using rule 22 (expression -> expression IN expression .)
+    GREATEREQUALTHAN reduce using rule 22 (expression -> expression IN expression .)
+    IN              reduce using rule 22 (expression -> expression IN expression .)
+    $end            reduce using rule 22 (expression -> expression IN expression .)
+    RPAREN          reduce using rule 22 (expression -> expression IN expression .)
+    COMMA           reduce using rule 22 (expression -> expression IN expression .)
+    RBRACKET        reduce using rule 22 (expression -> expression IN expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    FLOORDIVIDE     shift and go to state 16
+    MODULUS         shift and go to state 17
+    POWER           shift and go to state 18
+    LBRACKET        shift and go to state 19
+
+  ! PLUS            [ reduce using rule 22 (expression -> expression IN expression .) ]
+  ! MINUS           [ reduce using rule 22 (expression -> expression IN expression .) ]
+  ! TIMES           [ reduce using rule 22 (expression -> expression IN expression .) ]
+  ! DIVIDE          [ reduce using rule 22 (expression -> expression IN expression .) ]
+  ! FLOORDIVIDE     [ reduce using rule 22 (expression -> expression IN expression .) ]
+  ! MODULUS         [ reduce using rule 22 (expression -> expression IN expression .) ]
+  ! POWER           [ reduce using rule 22 (expression -> expression IN expression .) ]
+  ! LBRACKET        [ reduce using rule 22 (expression -> expression IN expression .) ]
+  ! OR              [ shift and go to state 20 ]
+  ! AND             [ shift and go to state 21 ]
+  ! LESSTHAN        [ shift and go to state 22 ]
+  ! LESSEQUALTHAN   [ shift and go to state 23 ]
+  ! EQUAL           [ shift and go to state 24 ]
+  ! NOTEQUAL        [ shift and go to state 25 ]
+  ! GREATERTHAN     [ shift and go to state 26 ]
+  ! GREATEREQUALTHAN [ shift and go to state 27 ]
+  ! IN              [ shift and go to state 28 ]
+
+
+state 51
+
+    (10) expression -> LPAREN expression RPAREN .
+
+    PLUS            reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    MINUS           reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    TIMES           reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    DIVIDE          reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    FLOORDIVIDE     reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    MODULUS         reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    POWER           reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    LBRACKET        reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    OR              reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    AND             reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    LESSTHAN        reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    LESSEQUALTHAN   reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    EQUAL           reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    NOTEQUAL        reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    GREATERTHAN     reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    GREATEREQUALTHAN reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    IN              reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    $end            reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    COMMA           reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    RBRACKET        reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+
+
+state 52
+
+    (11) expression -> LBRACKET list RBRACKET .
+
+    PLUS            reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    MINUS           reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    TIMES           reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    DIVIDE          reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    FLOORDIVIDE     reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    MODULUS         reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    POWER           reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    LBRACKET        reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    OR              reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    AND             reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    LESSTHAN        reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    LESSEQUALTHAN   reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    EQUAL           reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    NOTEQUAL        reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    GREATERTHAN     reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    GREATEREQUALTHAN reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    IN              reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    $end            reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    RPAREN          reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    COMMA           reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+    RBRACKET        reduce using rule 11 (expression -> LBRACKET list RBRACKET .)
+
+
+state 53
+
+    (24) list -> expression COMMA . list
+    (24) list -> . expression COMMA list
+    (25) list -> . expression
+    (3) expression -> . expression PLUS expression
+    (4) expression -> . expression MINUS expression
+    (5) expression -> . expression TIMES expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression FLOORDIVIDE expression
+    (8) expression -> . expression MODULUS expression
+    (9) expression -> . expression POWER expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . LBRACKET list RBRACKET
+    (12) expression -> . LBRACKET RBRACKET
+    (13) expression -> . expression LBRACKET expression RBRACKET
+    (14) expression -> . expression OR expression
+    (15) expression -> . expression AND expression
+    (16) expression -> . expression LESSTHAN expression
+    (17) expression -> . expression LESSEQUALTHAN expression
+    (18) expression -> . expression EQUAL expression
+    (19) expression -> . expression NOTEQUAL expression
+    (20) expression -> . expression GREATERTHAN expression
+    (21) expression -> . expression GREATEREQUALTHAN expression
+    (22) expression -> . expression IN expression
+    (23) expression -> . NOT expression
+    (26) expression -> . factor
+    (27) factor -> . NUMBER
+    (28) factor -> . STRING
+    (29) factor -> . TRUE
+    (30) factor -> . FALSE
+
+    LPAREN          shift and go to state 4
+    LBRACKET        shift and go to state 5
+    NOT             shift and go to state 6
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    TRUE            shift and go to state 10
+    FALSE           shift and go to state 11
+
+    expression                     shift and go to state 32
+    list                           shift and go to state 55
+    factor                         shift and go to state 7
+
+state 54
+
+    (13) expression -> expression LBRACKET expression RBRACKET .
+
+    PLUS            reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    MINUS           reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    TIMES           reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    DIVIDE          reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    FLOORDIVIDE     reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    MODULUS         reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    POWER           reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    LBRACKET        reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    OR              reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    AND             reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    LESSTHAN        reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    LESSEQUALTHAN   reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    EQUAL           reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    NOTEQUAL        reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    GREATERTHAN     reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    GREATEREQUALTHAN reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    IN              reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    $end            reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    RPAREN          reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    COMMA           reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+    RBRACKET        reduce using rule 13 (expression -> expression LBRACKET expression RBRACKET .)
+
+
+state 55
+
+    (24) list -> expression COMMA list .
+
+    RBRACKET        reduce using rule 24 (list -> expression COMMA list .)
+
